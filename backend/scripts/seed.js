@@ -2,8 +2,13 @@ import mongoose from "mongoose"
 import dotenv from "dotenv"
 import User from "../models/user.model.js"
 
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
 
-dotenv.config({path : "../.env"})
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+dotenv.config({ path: resolve(__dirname, '../.env') });
 
 const seedAdmin = async () => {
   try {

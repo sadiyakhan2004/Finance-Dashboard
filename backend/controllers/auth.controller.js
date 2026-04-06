@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import User from "../models/user.model.js";
 
-const generateToken = async (id, role) => {
+const generateToken = (id, role) => {
     return jwt.sign(
         { id, role },
         process.env.JWT_SECRET,
@@ -46,7 +46,7 @@ const login = async (req, res) => {
       })
     }
 
-    const token = await generateToken(user._id, user.role)
+    const token = generateToken(user._id, user.role)
 
     res.status(200).json({
       success: true,

@@ -93,13 +93,21 @@ npm install
 ```
 
 #### 3. Setup environment variables
+
 Create a `.env` file in the backend folder:
+
 ```env
 PORT=5000
-MONGODB_URI=mongodb://localhost:27017/finance-dashboard
-JWT_SECRET=finance_dashboard_secret_key_2025
+MONGODB_URI=mongodb+srv://<db_username>:<db_password>@cluster0.mirdr.mongodb.net/finance-dashboard
+JWT_SECRET=your_secret_key_here
 JWT_EXPIRE=7d
 ```
+
+> **Replace the placeholders:**
+> - `<db_username>` → your MongoDB Atlas username
+> - `<db_password>` → your MongoDB Atlas password
+> - `your_secret_key_here` → any long random string (e.g. `finance_dashboard_secret_key_2025`)
+
 
 #### 4. Create admin account
 ```bash
@@ -408,3 +416,6 @@ All errors follow this format:
 - API documentation with Swagger
 - Password reset functionality
 - Refresh token implementation
+
+
+
